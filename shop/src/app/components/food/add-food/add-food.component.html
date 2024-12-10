@@ -1,6 +1,11 @@
 <div class="wrapper">
     <section>
-      <h1 class="border-bottom mb-5">Add Food</h1>
+      @if (isEditMode) {
+        <h1 class="border-bottom mb-5">Edit Food</h1>
+      } @else {
+        <h1 class="border-bottom mb-5">Add Food</h1>
+      }
+      
       <div>
         <form #foodForm="ngForm" (ngSubmit)="onSubmit(foodForm)">
           <div class="form-group">

@@ -1,7 +1,9 @@
-<div class="info row mx-auto d-flex flex-row justify-content-center">
+<div class="info">
+  <h2 class="users-title">USERS</h2>
+  <div class="profiles-container">
     <div *ngFor="let u of profiles" class="user-profile" [ngClass]="{ 'text-center': true }">
       <span>
-        <img class="rounded" src="/assets/images/profile.jpg" width="100px" height="100px" alt="Profile image">
+        <img class="rounded" src="https://i.pinimg.com/280x280_RS/55/96/4e/55964ebb02710d6b9ce1c26f1d857906.jpg" width="100px" height="100px" alt="Profile image">
       </span>
       <br>
       <div>
@@ -15,5 +17,6 @@
         <p>Age: {{ u.age }}</p>
       </div>
     </div>
+  </div>
   </div>
   

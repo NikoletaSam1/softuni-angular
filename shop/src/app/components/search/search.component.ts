@@ -3,11 +3,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Food } from '../../../types/food';
 import { FoodService } from '../../services/food.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import RegistrationService from '../../services/registration.service';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
@@ -15,7 +17,7 @@ export class SearchComponent implements OnInit{
   foods: Food[] = [];
   @Output() filtered = new EventEmitter<Food[]>();
 
-  constructor(private foodService: FoodService){}
+  constructor(private foodService: FoodService, private auth: RegistrationService){}
 
   searchCriteria = {
     name: '',
@@ -41,23 +43,11 @@ export class SearchComponent implements OnInit{
       this.searchCriteria.caloriesMax).subscribe(data => {
         this.filteredFoods = data;
       })
-      this.filtered.emit(this.filteredFoods);
-
-
-    // this.foodService.getFood().subscribe(data => {
-    //   this.foods = data;
-    // })
-
-    // this.filteredFoods = this.foods.filter(food => {
-    //   return (
-    //     (!this.searchCriteria.name || food.name.toLowerCase().includes(this.searchCriteria.name.toLowerCase())) &&
-    //     (!this.searchCriteria.category || food.category.toLowerCase().includes(this.searchCriteria.category.toLowerCase())) &&
-    //     (this.searchCriteria.caloriesMin === null || food.calories <= this.searchCriteria.caloriesMin) &&
-    //     (this.searchCriteria.caloriesMax === null || food.calories >= this.searchCriteria.caloriesMax)
-    //   );
-    // });
-
-    // this.filtered.emit(this.filteredFoods);
+      // this.filtered.emit(this.filteredFoods);
   }
 
+
+  isAuthenticated(): boolean{
+    return this.auth.isLogged;
+  }
 }

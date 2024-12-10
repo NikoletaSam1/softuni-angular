@@ -22,4 +22,5 @@ export const routes: Routes = [
     {path: 'food/edit/:id', component: AddFoodComponent},
     {path: 'profiles', component: ProfilesComponent},
     {path: 'food/search', component: SearchComponent}
+    //todo error default page and auth guards and use fancy error handling and success handling messages
 ];

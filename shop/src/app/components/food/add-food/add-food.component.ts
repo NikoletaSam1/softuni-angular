@@ -58,7 +58,7 @@ export class AddFoodComponent implements OnInit{
   private updateFood(): void {
     this.foodService.updateFood(this.food).subscribe({
       next: () => {
-        this.router.navigate(['/all/food']);
+        this.router.navigate(['/food/details/', this.food.id]);
       },
       error: () => {
         console.error('Error updating food');

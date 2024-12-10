@@ -1,14 +1,19 @@
 {
   "comments": [
     {
-      "id": 1,
-      "commentText": "This is my favourite shop.",
-      "username": "User1"
-    },
-    {
       "commentText": "Updated text",
       "username": "NikoletaSam1",
       "id": 4
+    },
+    {
+      "commentText": "hiiiii, i am testing",
+      "username": "NikoletaSam1",
+      "id": 5
+    },
+    {
+      "commentText": "this is the best place to buy food!",
+      "username": "NikoletaSam1",
+      "id": 6
     }
   ],
   "users": [
@@ -78,13 +83,40 @@
       "price": 15
     },
     {
-      "name": "burger",
+      "name": "burger3",
       "grams": 200,
-      "calories": 500,
-      "price": 18.9,
-      "description": "very good, 10 ot 10 but changed again",
+      "calories": 550,
+      "price": 20,
+      "description": "very good, 10 ot 10 but changed again 2",
       "category": "SALAD",
       "id": 2
+    },
+    {
+      "name": "appetizer1",
+      "grams": 400,
+      "calories": 600,
+      "price": 12.3,
+      "description": "amazing appetizer",
+      "category": "APPETIZER",
+      "id": 3
+    },
+    {
+      "name": "tiramisu",
+      "grams": 150,
+      "calories": 220,
+      "price": 7.45,
+      "description": "best tiramisu",
+      "category": "DESSERT",
+      "id": 4
+    },
+    {
+      "name": "salmon toast",
+      "grams": 200,
+      "calories": 100,
+      "price": 13,
+      "description": "best way to start your meal",
+      "category": "APPETIZER",
+      "id": 5
     }
   ],
   "orders": [
@@ -109,9 +141,27 @@
           "calories": 300,
           "grams": 250,
           "price": 15
+        },
+        {
+          "name": "burger3",
+          "grams": 200,
+          "calories": 550,
+          "price": 20,
+          "description": "very good, 10 ot 10 but changed again 2",
+          "category": "SALAD",
+          "id": 2
+        },
+        {
+          "name": "burger3",
+          "grams": 200,
+          "calories": 550,
+          "price": 20,
+          "description": "very good, 10 ot 10 but changed again 2",
+          "category": "SALAD",
+          "id": 2
         }
       ],
-      "totalValue": 30
+      "totalValue": 70
     },
     {
       "id": "aqy0sigbl",
