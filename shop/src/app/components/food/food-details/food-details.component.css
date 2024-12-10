@@ -1,0 +1,112 @@
+/* General Layout */
+.wrapper {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: url('../../../../assets/images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Food Grid */
+.food-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.food-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Food Image */
+.food-info img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Food Name */
+.food-info h4 {
+    margin: 10px 0;
+    font-size: 1.8rem;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* Food Details */
+.food-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.food-info span {
+    font-weight: bold;
+}
+
+/* Description Section */
+.food-description {
+    margin-top: 20px;
+}
+
+.food-description h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Order Button */
+.order {
+    margin-top: 20px;
+}
+
+/* Container for buttons */
+.buttons-container {
+  display: flex;
+  gap: 10px;  /* Add some space between the buttons */
+  justify-content: center; /* Center buttons horizontally */
+}
+
+.btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: rgb(119, 119, 230);
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .food-info {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .food-info h4 {
+        font-size: 1.5rem;
+    }
+}

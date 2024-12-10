@@ -1,0 +1,149 @@
+/* General Layout */
+.wrapper {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: url('../../../assets/images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color:burlywood;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+  }
+  
+  /* Food Section */
+  .food {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping for small screens */
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Food Details */
+  .details-main {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 0 1 calc(33.333% - 40px); /* Responsive 3-column layout */
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .details-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Food Info */
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .info img {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .info h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-link {
+    background-color: rgb(119, 119, 230);
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .btn-link:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Total Price Section */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mb-5 {
+    margin-bottom: 3rem;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .border-bottom {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .details-main {
+      flex: 0 1 calc(50% - 20px); /* 2-column layout for medium screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .details-main {
+      flex: 0 1 100%; /* Full-width layout for small screens */
+    }
+  
+    .info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .info img {
+      margin-bottom: 10px;
+    }
+  
+    .info h4 {
+      font-size: 1.2rem;
+    }
+  
+    .info p {
+      font-size: 0.8rem;
+    }
+  }
+  

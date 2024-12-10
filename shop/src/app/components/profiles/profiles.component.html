@@ -1,0 +1,19 @@
+<div class="info row mx-auto d-flex flex-row justify-content-center">
+    <div *ngFor="let u of profiles" class="user-profile" [ngClass]="{ 'text-center': true }">
+      <span>
+        <img class="rounded" src="/assets/images/profile.jpg" width="100px" height="100px" alt="Profile image">
+      </span>
+      <br>
+      <div>
+        <span class="bg-secondary p-1 px-4 rounded text-white" [ngClass]="{ 'role-tag': true }">
+          {{ u.role }}
+        </span>
+        <br>
+        <h4>{{ u.fullName }}</h4>
+        <p>Username: {{ u.username }}</p>
+        <p>Email: {{ u.email }}</p>
+        <p>Age: {{ u.age }}</p>
+      </div>
+    </div>
+  </div>
+  

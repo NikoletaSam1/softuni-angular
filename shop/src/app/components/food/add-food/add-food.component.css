@@ -1,0 +1,124 @@
+/* General Layout */
+.wrapper {
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: url('../../../../assets/images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Header */
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: burlywood;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    border-bottom: 2px solid burlywood;
+    padding-bottom: 10px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  /* Error Messages */
+  .invalid-feedback {
+    font-size: 0.9rem;
+    padding: 5px;
+    margin-top: 5px;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  .invalid-feedback.bg-danger {
+    background-color: rgba(165, 42, 42, 0.74);
+    color: #fff;
+  }
+  
+  /* Buttons */
+  input[type='submit'] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(119, 119, 230);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  input[type='submit']:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  input[type='submit']:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    section {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

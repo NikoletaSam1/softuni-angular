@@ -1,0 +1,104 @@
+/* General Layout */
+.wrapper {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif; /* Fancy Font */
+  color: #333;
+  background: url('../../../../assets/images/banner-bg.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: burlywood;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  letter-spacing: 2px;
+}
+
+.form-group h4 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: burlywood;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+/* Comment Form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+textarea {
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:hover {
+  background-color: rgba(255, 255, 255, 0.75); /* Slightly less transparent on hover */
+}
+
+textarea:focus {
+  background-color: rgba(255, 255, 255, 0.9); /* Opaque on focus */
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 6px 10px rgba(0, 123, 255, 0.25);
+}
+
+textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Semi-transparent placeholder */
+}
+
+textarea.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #dc3545;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-link {
+  background-color: rgb(119, 119, 230);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.8rem;
+  }
+}
