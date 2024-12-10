@@ -9,18 +9,23 @@ import { OrderComponent } from './components/order/order.component';
 import { AddFoodComponent } from './components/food/add-food/add-food.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { SearchComponent } from './components/search/search.component';
+import { AdminGuard } from './guards/admin.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthorizedGuard } from './guards/authorized.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
-    {path: '', component: CommentsComponent},
-    {path: 'register', component: RegistrationComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'add/comment', component: AddComponent},
+    {path: '', component: CommentsComponent, pathMatch: 'full'},
+    {path: 'register', component: RegistrationComponent, canActivate: [AuthorizedGuard]},
+    {path: 'login', component: LoginComponent, canActivate: [AuthorizedGuard]},
+    {path: 'add/comment', component: AddComponent, canActivate: [AdminGuard, AuthGuard]},
     {path: 'all/food', component: FoodComponent},
     {path: 'food/details/:id', component: FoodDetailsComponent},
-    {path: 'order/review', component: OrderComponent},
-    {path: 'food/add', component: AddFoodComponent},
+    {path: 'order/review', component: OrderComponent, canActivate: [AdminGuard, AuthGuard]},
+    {path: 'food/add', component: AddFoodComponent, canActivate: [AdminGuard]},
     {path: 'food/edit/:id', component: AddFoodComponent},
-    {path: 'profiles', component: ProfilesComponent},
-    {path: 'food/search', component: SearchComponent}
-    //todo error default page and auth guards and use fancy error handling and success handling messages
+    {path: 'profiles', component: ProfilesComponent, canActivate: [AdminGuard]},
+    {path: 'food/search', component: SearchComponent},
+    {path: '404', component: NotFoundComponent},
+    {path: '**', redirectTo: '/404'}
 ];
