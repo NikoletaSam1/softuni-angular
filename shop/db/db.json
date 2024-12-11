@@ -14,6 +14,11 @@
       "commentText": "this is the best place to buy food!",
       "username": "NikoletaSam1",
       "id": 6
+    },
+    {
+      "commentText": "test notification",
+      "username": "NikoletaSam1",
+      "id": 7
     }
   ],
   "users": [
@@ -70,6 +75,33 @@
       "age": 9,
       "role": "admin",
       "id": "TOn18tj"
+    },
+    {
+      "email": "user@1.bg",
+      "password": "$2a$10$l9/BZac/17T856GgNdZMK.lMOdP.PDgXOPS.GQknFxOvEi.3KrEsO",
+      "username": "user12",
+      "fullName": "user12",
+      "age": 9,
+      "role": "user",
+      "id": "1hhaSO6"
+    },
+    {
+      "email": "nikoletasamardzhieva@gmail.com",
+      "password": "$2a$10$7i5E6X9/SL3V.5JwvhdKIeQLUdB6xDXiuFLxGAoq2G7ooqyKz1R1.",
+      "username": "niki niki",
+      "fullName": "Nikoleta Samardzhieva",
+      "age": 23,
+      "role": "user",
+      "id": "hWj0p7Z"
+    },
+    {
+      "email": "niki@final.angular",
+      "password": "$2a$10$lpnJP/JcqQpHDUk4lDb6sec4cRAKimKn/o8bi1ZUwWjDgN0Ky7BTu",
+      "username": "nikisamniki",
+      "fullName": "Nikoleta Samardzhieva",
+      "age": 23,
+      "role": "user",
+      "id": "w55Ic24"
     }
   ],
   "food": [
@@ -123,45 +155,8 @@
     {
       "id": "6vh514rst",
       "userId": "TOn18tj",
-      "food": [
-        {
-          "id": 1,
-          "name": "Greek Salad",
-          "description": "A fresh and healthy salad.",
-          "category": "SALAD",
-          "calories": 300,
-          "grams": 250,
-          "price": 15
-        },
-        {
-          "id": 1,
-          "name": "Greek Salad",
-          "description": "A fresh and healthy salad.",
-          "category": "SALAD",
-          "calories": 300,
-          "grams": 250,
-          "price": 15
-        },
-        {
-          "name": "burger3",
-          "grams": 200,
-          "calories": 550,
-          "price": 20,
-          "description": "very good, 10 ot 10 but changed again 2",
-          "category": "SALAD",
-          "id": 2
-        },
-        {
-          "name": "burger3",
-          "grams": 200,
-          "calories": 550,
-          "price": 20,
-          "description": "very good, 10 ot 10 but changed again 2",
-          "category": "SALAD",
-          "id": 2
-        }
-      ],
-      "totalValue": 70
+      "food": [],
+      "totalValue": 0
     },
     {
       "id": "aqy0sigbl",
@@ -184,9 +179,34 @@
           "calories": 300,
           "grams": 250,
           "price": 15
+        },
+        {
+          "id": 1,
+          "name": "Greek Salad",
+          "description": "A fresh and healthy salad.",
+          "category": "SALAD",
+          "calories": 300,
+          "grams": 250,
+          "price": 15
         }
       ],
-      "totalValue": 33.9
+      "totalValue": 48.9
+    },
+    {
+      "id": "jhcmrc7x4",
+      "userId": "1hhaSO6",
+      "food": [
+        {
+          "id": 1,
+          "name": "Greek Salad",
+          "description": "A fresh and healthy salad.",
+          "category": "SALAD",
+          "calories": 300,
+          "grams": 250,
+          "price": 15
+        }
+      ],
+      "totalValue": 15
     }
   ]
 }

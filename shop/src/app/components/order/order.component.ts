@@ -5,6 +5,7 @@ import RegistrationService from '../../services/registration.service';
 import { Food } from '../../../types/food';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-order',
@@ -17,7 +18,8 @@ export class OrderComponent implements OnInit{
   order: Order | null = null;
   userId: string | null;
 
-  constructor(private orderService: OrderService, private auth: RegistrationService, private router: Router) {
+  constructor(private orderService: OrderService, private auth: RegistrationService, private router: Router,
+    private notification: NotificationService) {
     this.userId = auth.userid;
   }
 
@@ -55,10 +57,11 @@ export class OrderComponent implements OnInit{
     }
     this.orderService.removeFoodFromOrder(this.userId, foodId).subscribe(
       (updatedOrder) => {
+        this.notification.showSuccess('Food removed successfully!', 'Well done!');
         this.order = updatedOrder;
       },
       (error) => {
-        console.error('Error removing food from order:', error);
+        this.notification.showError('Something went wrong. Please try again.', 'Oops!');
       }
     );
   }
@@ -69,6 +72,7 @@ export class OrderComponent implements OnInit{
       return;
     }
     this.orderService.deleteOrder(this.userId).subscribe();
+    this.notification.showSuccess('Order made successfully!', 'Well done!');
     this.router.navigate(['/']);
   }
 }

@@ -3,6 +3,7 @@ import RegistrationService from '../../services/registration.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent {
   emailAlreadyExists: boolean = false;
 
-  constructor(private registrationService: RegistrationService, private router: Router) {}
+  constructor(private registrationService: RegistrationService, private router: Router, private notification: NotificationService) {}
 
   onSubmit(form: NgForm): void {
     if (form.invalid) {
@@ -25,7 +26,7 @@ export class RegistrationComponent {
       form.value;
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match!');
+      this.notification.showError('Passwords do not match.', 'Oops!');
       return;
     }
 
@@ -39,10 +40,12 @@ export class RegistrationComponent {
 
     this.registrationService.registerUser(user).subscribe({
       next: (response) => {
+        this.notification.showSuccess('Successful registration!', 'Well done!');
         this.router.navigate(['/']);
       },
       error: (err) => {
         this.emailAlreadyExists = true;
+        this.notification.showError('Something went wrong. Please try again.', 'Oops!');
       },
     });
   }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import RegistrationService from '../../services/registration.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import RegistrationService from '../../services/registration.service';
 export class LoginComponent {
   errorMessage: string | null = null;
 
-  constructor(private authService: RegistrationService,  private router: Router){}
+  constructor(private authService: RegistrationService,  private router: Router, private notification: NotificationService){}
 
   onSubmit(loginForm: NgForm): void {
     if (loginForm.valid) {
@@ -22,9 +23,11 @@ export class LoginComponent {
       const user = { email, password };
       this.authService.login(user).subscribe({
         next: (response) => {
+          this.notification.showSuccess('Successful login!', 'Well done!');
           this.router.navigate(['/']);
         },
         error: (err) => {
+          this.notification.showError('Your LOG IN template is not filled correctly!', 'Oops!');
           this.errorMessage = 'Your LOG IN template is not filled correctly!'
         },
       });

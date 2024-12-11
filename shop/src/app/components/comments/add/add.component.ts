@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 import { CommentsService } from '../../../services/comments.service';
 import { Comment } from '../../../../types/comments';
 import RegistrationService from '../../../services/registration.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-add',
@@ -17,7 +18,7 @@ export class AddComponent {
   comment: Comment = {} as Comment;
 
   constructor(private commentService: CommentsService, 
-              private auth: RegistrationService, private router: Router
+              private auth: RegistrationService, private router: Router, private notification: NotificationService
   ) { }
 
   onSubmit(commentForm: NgForm) {
@@ -25,6 +26,7 @@ export class AddComponent {
       this.comment.username = this.auth.username;
       this.commentService.addComment(this.comment).subscribe({
         next: () => {
+          this.notification.showSuccess('Comment added successfully!', 'Well done!');
           this.router.navigate(['/']);
         }
       });

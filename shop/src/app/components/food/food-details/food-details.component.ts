@@ -6,6 +6,7 @@ import { Food } from '../../../../types/food';
 import { CommonModule } from '@angular/common';
 import RegistrationService from '../../../services/registration.service';
 import { OrderService } from '../../../services/order.service';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-food-details',
@@ -18,7 +19,7 @@ export class FoodDetailsComponent implements OnInit{
   food: Food | null = null;
   
   constructor(private foodService: FoodService, private auth: RegistrationService, private route: ActivatedRoute,
-              private orderService: OrderService, private router: Router) {}
+              private orderService: OrderService, private router: Router, private notification: NotificationService) {}
 
   ngOnInit(): void {
     const foodId = this.route.snapshot.paramMap.get('id');
@@ -47,6 +48,7 @@ export class FoodDetailsComponent implements OnInit{
     }
     this.orderService.addFoodToOrder(userId, food).subscribe({
       next: () => {
+        this.notification.showSuccess('Food successfully added to order!', 'Well done!');
         this.router.navigate(['/order/review']);
       }
     });
