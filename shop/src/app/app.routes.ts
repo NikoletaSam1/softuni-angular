@@ -13,12 +13,14 @@ import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizedGuard } from './guards/authorized.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { OwncommentsComponent } from './components/comments/owncomments/owncomments.component';
 
 export const routes: Routes = [
     {path: '', component: CommentsComponent, pathMatch: 'full'},
     {path: 'register', component: RegistrationComponent, canActivate: [AuthorizedGuard]},
     {path: 'login', component: LoginComponent, canActivate: [AuthorizedGuard]},
     {path: 'add/comment', component: AddComponent, canActivate: [AuthGuard]},
+    {path: 'own/comments', component: OwncommentsComponent, canActivate: [AuthGuard]},
     {path: 'all/food', component: FoodComponent},
     {path: 'food/details/:id', component: FoodDetailsComponent},
     {path: 'order/review', component: OrderComponent, canActivate: [AuthGuard]},

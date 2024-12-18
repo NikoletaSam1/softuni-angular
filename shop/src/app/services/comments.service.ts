@@ -35,4 +35,9 @@ export class CommentsService {
   deleteComment(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  getCommentsByUsername(username: string): Observable<Comment[]> {
+    const url = `${this.baseUrl}?username=${username}`;
+    return this.http.get<Comment[]>(url);
+  }
 }
